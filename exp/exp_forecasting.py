@@ -272,7 +272,7 @@ class Exp_Forecast(Exp_Basic):
         # TODO: add more metrics
         mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps = metric(preds, trues)
         print('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps))
-        f = open(self.args.model + "_result_long_term_forecast.txt", 'a')
+        f = open('./logs/'+ self.args.model + "_result_long_term_forecast.txt", 'a')
         f.write(setting + "  \n")
         f.write('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}  \n'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps))
         f.write('\n')

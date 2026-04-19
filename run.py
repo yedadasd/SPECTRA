@@ -52,7 +52,7 @@ if __name__ == '__main__':
     parser.add_argument('--embed', type=str, default='timeF',
                         help='time features encoding, options:[timeF, fixed, learned]')
     parser.add_argument('--activation', type=str, default='gelu', help='activation')
-    
+    parser.add_argument('--num_channels', type=int, default=[25,25,25,25], help='number of channels for CNN')
     parser.add_argument('--d_model', type=int, default=512, help='dimension of model')
     parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
     parser.add_argument('--d_state', type=int, default=32, help='feature dimension (N) of Mamba')

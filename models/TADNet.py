@@ -96,7 +96,7 @@ class Model(nn.Module):
         
 
         self.regular_block = BasicsBlock(cnn_num_inputs=5,
-                                         num_channels=[25, 25, 25, 25, 25, 25, 25, 25] ,
+                                         num_channels=configs.num_channels,
                                          dropout=self.dropout,
                                          static_cov_dim=self.static_cov_dim,
                                          hidden_size=self.hidden_size,
@@ -107,7 +107,7 @@ class Model(nn.Module):
                                          fourier_P=self.fourier_P)
 
         self.residual_block = BasicsBlock(cnn_num_inputs=5,
-                                          num_channels=[25, 25, 25, 25, 25, 25, 25, 25] ,
+                                          num_channels=configs.num_channels,
                                           dropout=self.dropout,
                                           static_cov_dim=self.static_cov_dim,
                                           hidden_size=self.hidden_size,
