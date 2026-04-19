@@ -3,6 +3,8 @@ __pycache__/
 *.pth
 *.pt
 *.h5
+*.log
+*.txt
 results/
 test_results/
 logs/
