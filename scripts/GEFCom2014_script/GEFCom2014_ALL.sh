@@ -1,0 +1,11 @@
+bash ./scripts/GEFCom2014_script/Autoformer_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/DeepAR_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/DLinear_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/iTransformer_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/PatchTST_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/SPECTRA_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/TADNet_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/TemporalFusionTransformer_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/TiDE_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/TimesNet_GEFCom2014_all.sh
+bash ./scripts/GEFCom2014_script/TimeXer_GEFCom2014_all.sh

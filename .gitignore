@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pth
+*.pt
+*.h5
+results/
+test_results/
+logs/
+checkpoints/
+venv/
+dataset/
+.env

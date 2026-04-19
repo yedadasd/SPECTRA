@@ -1,0 +1,71 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 1/6/2024 上午 10:27
+# @Author  : 叶航
+# @File    : RevIN.py
+# @Description : doWhat?
+import torch
+import torch.nn as nn
+
+class RevIN(nn.Module):
+    def __init__(self, num_features: int, eps=1e-5, affine=True):
+        """
+        :param num_features: the number of features or channels
+        :param eps: a value added for numerical stability
+        :param affine: if True, RevIN has learnable affine parameters
+        """
+        super(RevIN, self).__init__()
+        self.num_features = num_features
+        self.eps = eps
+        self.affine = affine
+        if self.affine:
+            self._init_params()
+
+    def forward(self, x, mode:str):
+        if mode == 'norm':
+            self._get_statistics(x)
+            x = self._normalize(x)
+        elif mode == 'denorm':
+            x = self._denormalize(x)
+        else: raise NotImplementedError
+        return x
+
+    def _init_params(self):
+        # initialize RevIN params: (C,)
+        self.affine_weight = nn.Parameter(torch.ones(self.num_features))
+        self.affine_bias = nn.Parameter(torch.zeros(self.num_features))
+
+    def _get_statistics(self, x):
+        dim2reduce = tuple(range(1, x.ndim-1))
+        self.mean = torch.mean(x, dim=dim2reduce, keepdim=True).detach()
+        self.stdev = torch.sqrt(torch.var(x, dim=dim2reduce, keepdim=True, unbiased=False) + self.eps).detach()
+
+    def _normalize(self, x):
+        x = x - self.mean
+        x = x / self.stdev
+        if self.affine:
+            x = x * self.affine_weight
+            x = x + self.affine_bias
+        return x
+
+    def _denormalize(self, x):
+        # 针对分位数改进
+        # 提取统计量，避免直接修改 self 属性影响后续逻辑
+        mean = self.mean
+        stdev = self.stdev
+        
+        # 核心修改点：动态处理维度不匹配问题
+        # 如果输入 x 的维度变高（例如从 3D 变成了 4D 的分位数输出），则在中间插入维度
+        # 这会将 [B, 1, D] 转换为 [B, 1, 1, D] 以支持广播机制
+        while mean.dim() < x.dim():
+            mean = mean.unsqueeze(1)
+            stdev = stdev.unsqueeze(1)
+
+        if self.affine:
+            # affine 参数形状为 (D,)，PyTorch 会自动从后向前匹配维度，不受 Q 和 pred_len 影响
+            x = x - self.affine_bias
+            x = x / (self.affine_weight + self.eps*self.eps)
+            
+        x = x * stdev
+        x = x + mean
+        return x

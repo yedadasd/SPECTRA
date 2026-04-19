@@ -1,0 +1,36 @@
+model_name=TemporalFusionTransformer
+seq_len=168
+
+for pred_len in 36 168
+do
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./dataset/GEFCom2014/Price/ \
+  --data_path Price_OT.csv \
+  --model_id GEFCom_Price_$seq_len'_'$pred_len \
+  --model $model_name \
+  --data GEFCom \
+  --target OT \
+  --features M \
+  --seq_len $seq_len \
+  --label_len 48 \
+  --pred_len $pred_len \
+  --e_layers 2 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 3 \
+  --dec_in 3 \
+  --c_out 3 \
+  --des 'Exp' \
+  --batch_size 8 \
+  --loss_type quantileLoss \
+  --step 12 \
+  --quantiles "[0.1, 0.5, 0.9]" \
+  --d_ff 512 \
+  --d_model 512 \
+  --dropout 0.3 \
+  --itr 1
+
+done
