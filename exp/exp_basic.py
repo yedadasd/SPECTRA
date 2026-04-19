@@ -1,7 +1,6 @@
 import os
 import torch
-from models import Autoformer, DLinear, PatchTST, iTransformer, TiDE, TemporalFusionTransformer, TADNet, \
-    SPECTRA, DeepAR, TimeXer, SPECTRA_I, Karma
+from models import Autoformer, DLinear, PatchTST, iTransformer, TiDE, TemporalFusionTransformer, TADNet, DeepAR, TimeXer, SPECTRA_I, TimesNet
 
 
 class Exp_Basic(object):
@@ -11,15 +10,14 @@ class Exp_Basic(object):
             'Autoformer': Autoformer,
             'DeepAR': DeepAR,
             'DLinear': DLinear,
-            'SPECTRA': SPECTRA,
+            'TimesNet': TimesNet,
             'iTransformer': iTransformer,
             'PatchTST': PatchTST,
             'TADNet': TADNet,
             'TemporalFusionTransformer': TemporalFusionTransformer,
             'TiDE': TiDE,
             "TimeXer": TimeXer,
-            "SPECTRA_I": SPECTRA_I,
-            'Karma':Karma
+            "SPECTRA_I": SPECTRA_I
         }
 
         self.device = self._acquire_device()
