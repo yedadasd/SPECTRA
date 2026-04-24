@@ -2,7 +2,7 @@ model_name=TADNet
 
 seq_len=168
 
-for pred_len in 12 24 36 72 120 168
+for pred_len in 48 96 192 336
 do
 
 python -u run.py \

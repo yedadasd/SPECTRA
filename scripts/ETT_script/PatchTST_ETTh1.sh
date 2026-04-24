@@ -17,14 +17,13 @@ python -u run.py \
   --seq_len $seq_len \
   --label_len 48 \
   --pred_len $pred_len \
-  --e_layers 1 \
+  --e_layers 2 \
   --d_layers 1 \
   --factor 3 \
   --enc_in 7 \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --n_heads 2 \
   --loss_type quantileLoss \
   --step 1 \
   --quantiles "[0.1, 0.5, 0.9]" \

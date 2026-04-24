@@ -17,7 +17,20 @@ datatype_dict = {'ETTh1': TypePos([], [x for x in range(7)]),
                  'ETTm1': TypePos([], [x for x in range(7)]),
                  'ETTh2': TypePos([], [x for x in range(7)]),
                  'ETTm2': TypePos([], [x for x in range(7)]),
-                 'electricity': TypePos([0], [x for x in range(1, 321)])}
+                 'electricity': TypePos([0], [x for x in range(1, 321)]),
+                 'load': TypePos([], [x for x in range(59)]),
+                 'price': TypePos([], [x for x in range(31)]),
+                 'solar': TypePos([], [x for x in range(36)]),
+                 'wind': TypePos([], [x for x in range(57)]),
+                 'Load_OT': TypePos([], [x for x in range(26)]),
+                 'Price_OT': TypePos([], [x for x in range(3)]),
+                 'Solarz1_OT': TypePos([], [x for x in range(13)]),
+                 'Solarz2_OT': TypePos([], [x for x in range(13)]),
+                 'Solarz3_OT': TypePos([], [x for x in range(13)]),
+                 'Windz1_OT': TypePos([], [x for x in range(5)]),
+                 'Windz5_OT': TypePos([], [x for x in range(5)]),
+                 'Windz10_OT': TypePos([], [x for x in range(5)])
+                 }
 
 
 def get_known_len(embed_type, freq):

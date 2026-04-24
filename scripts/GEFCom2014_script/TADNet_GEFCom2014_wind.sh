@@ -24,7 +24,6 @@ python -u run.py \
   --des 'TADNet' \
   --d_model 160 \
   --batch_size 4 \
-  --learning_rate 0.001 \
   --n_heads 4 \
   --dropout 0.2 \
   --train_epochs 10 \

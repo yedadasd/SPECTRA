@@ -116,9 +116,9 @@ def ROU(pred, true):
     return rou10, rou50, rou90
 
 
-def GRPS(pred, true):
+def CRPS(pred, true):
     """
-    Generalized Ranked Probability Score (基于分位数近似, normalized)
+    Normalized Continuous Ranked Probability Score (NCRPS)
     pred: [B, Q, L, D]
     true: [B, L, D]
     """
@@ -149,8 +149,8 @@ def GRPS(pred, true):
         ql = np.maximum((q - 1.0) * err, q * err)
         total_ql += np.sum(ql)
 
-    grps = 2.0 * total_ql / (q_num * denom)
-    return grps
+    crps = 2.0 * total_ql / (q_num * denom)
+    return crps
     
 
 def metric(pred, true):
@@ -164,6 +164,6 @@ def metric(pred, true):
     nd = ND(pred, true)
     picp = PICP(pred, true)
     rou10, rou50, rou90 = ROU(pred, true)
-    grps = GRPS(pred, true)
+    crps = CRPS(pred, true)
 
-    return mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps
+    return mae, mse, rmse, nd, picp, rou10, rou50, rou90, crps

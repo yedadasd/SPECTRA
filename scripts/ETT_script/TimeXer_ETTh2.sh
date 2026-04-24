@@ -31,3 +31,4 @@ python3 -u run.py \
   --quantiles "[0.1, 0.5, 0.9]" \
   --itr 1
 
+done

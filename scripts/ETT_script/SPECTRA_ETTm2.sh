@@ -23,7 +23,7 @@ python -u run.py \
   --d_state 16 \
   --d_conv 4 \
   --c_out 7 \
-  --d_model 256 \
+  --d_model 128 \
   --use_norm 1 \
   --des '' \
   --batch_size 32 \
@@ -31,7 +31,8 @@ python -u run.py \
   --step 1 \
   --norm_method RevIN \
   --itr 1 \
-  --quantiles "[0.1, 0.5, 0.9]" \
-  # --norm_method RevIN \
+  --learning_rate 0.0005 \
+  --dropout 0.15 \
+  --cutoff_freq 0.20 \
 
 done

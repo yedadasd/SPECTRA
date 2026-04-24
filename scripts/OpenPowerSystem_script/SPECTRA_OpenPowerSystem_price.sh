@@ -24,14 +24,14 @@ python -u run.py \
   --d_conv 2 \
   --c_out 31 \
   --des '' \
-  --d_model 512 \
+  --d_model 256 \
   --batch_size 32 \
+  --clip \
   --use_norm 1 \
-  --learning_rate 0.0005 \
+  --learning_rate 0.0001 \
   --loss_type quantileLoss \
-  --loss_alpha 0.8 \
   --step 1 \
-  --norm_method NS \
+  --norm_method RevIN \
   --itr 1 \
   --quantiles "[0.1, 0.5, 0.9]"
 

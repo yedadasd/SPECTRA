@@ -26,7 +26,7 @@ python -u run.py \
   --des 'Exp' \
   --batch_size 8 \
   --loss_type quantileLoss \
-  --step 12 \
+  --step 1 \
   --quantiles "[0.1, 0.5, 0.9]" \
   --d_ff 512 \
   --d_model 512 \

@@ -32,7 +32,7 @@ python -u run.py \
   --quantiles "[0.1, 0.5, 0.9]" \
   --itr 1 \
   --batch_size 32 \
-  --step 12 \
+  --step 1 \
   --learning_rate 0.001
 
 done

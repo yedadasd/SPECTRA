@@ -32,6 +32,5 @@ python -u run.py \
   --step 1 \
   --norm_method RevIN \
   --itr 1 \
-  --quantiles "[0.1, 0.5, 0.9]" \
-  # --norm_method RevIN \
+
 done

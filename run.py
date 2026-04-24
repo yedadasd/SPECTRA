@@ -58,7 +58,7 @@ if __name__ == '__main__':
     parser.add_argument('--d_state', type=int, default=32, help='feature dimension (N) of Mamba')
     parser.add_argument('--d_conv', type=int, default=4, help='1dConv kernel size for Mamba')
     parser.add_argument('--embed_dim', type=int, default=128, help='Karma decomposition embedding dimension')
-    parser.add_argument('--wavelet_type', type=str, default='db4', help='htfd')
+    parser.add_argument('--wavelet_type', type=str, default='db4', help='wavelet type')
     parser.add_argument('--cross_attn_heads', type=int, default=4, help='number of heads for cross-attention in MTPD')
     # probabilistic forecasting
     import ast
@@ -79,6 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--norm_method', type=str, default='NS',help='Norm method to use')
     parser.add_argument('--patch_len', type=int, default=16, help='patch length')
     parser.add_argument('--stride', type=int, default=8, help='stride for patching')
+    parser.add_argument('--cutoff_freq', type=float, default=0.25, help='cutoff frequency for patching')
     
     # lossf
     parser.add_argument('--loss_type', type=str, default='quantileLoss', help='loss function 4 probabilistic forecasting')
@@ -98,6 +99,7 @@ if __name__ == '__main__':
     parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
     parser.add_argument('--pct_start', type=float, default=0.3, help='pct_start')
     parser.add_argument('--use_amp', action='store_true', default=False, help='use automatic mixed precision training')
+    parser.add_argument('--clip', action='store_true', default=False, help='gradient clipping')
 
     # GPU
     parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')

@@ -163,6 +163,8 @@ class Exp_Forecast(Exp_Basic):
                     scaler.update()
                 else:
                     loss.backward()
+                    if self.args.clip:
+                        torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
                     model_optim.step()
 
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
@@ -270,16 +272,16 @@ class Exp_Forecast(Exp_Basic):
             os.makedirs(folder_path)
   
         # TODO: add more metrics
-        mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps = metric(preds, trues)
-        print('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps))
+        mae, mse, rmse, nd, picp, rou10, rou50, rou90, crps = metric(preds, trues)
+        print('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, crps))
         f = open('./logs/'+ self.args.model + "_result_long_term_forecast.txt", 'a')
         f.write(setting + "  \n")
-        f.write('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}  \n'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps))
+        f.write('mae:{}, mse:{}, rmse:{}, nd:{}, picp:{}, rou10:{}, rou50:{}, rou90:{}, grps:{}  \n'.format(mae, mse, rmse, nd, picp, rou10, rou50, rou90, crps))
         f.write('\n')
         f.write('\n')                                 
         f.close()
 
-        np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, nd, picp, rou10, rou50, rou90, grps]))
+        np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, nd, picp, rou10, rou50, rou90, crps]))
         np.save(folder_path + 'pred.npy', preds)
         np.save(folder_path + 'true.npy', trues)
         np.save(folder_path + 'input.npy', input_x)

@@ -30,7 +30,6 @@ python -u run.py \
   --use_norm 1 \
   --learning_rate 0.0005 \
   --loss_type quantileLoss \
-  --loss_alpha 0.8 \
   --step 1 \
   --norm_method NS \
   --itr 1 \
