@@ -4,7 +4,7 @@ seq_len=168
 for zone in 1 2 3
 do
 
-for pred_len in 36 168
+for pred_len in 12 24 36 72 120 168
 do
 
 python -u run.py \
