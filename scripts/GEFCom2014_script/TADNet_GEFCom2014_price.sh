@@ -20,7 +20,7 @@ python -u run.py \
   --enc_in 3 \
   --des 'TADNet' \
   --d_model 160 \
-  --batch_size 32 \
+  --batch_size 64 \
   --n_heads 4 \
   --dropout 0.2 \
   --train_epochs 10 \

@@ -1,4 +1,5 @@
 import math
+import pywt
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -68,9 +69,12 @@ class STSSE_Block(nn.Module):
         super(STSSE_Block, self).__init__()
         self.d_model = configs.d_model
         
+        wave_len = pywt.Wavelet(configs.wavelet_type).dec_len
+        d_model_wave = (configs.d_model + wave_len - 1) // 2
+        
         # frequency domain
-        self.wavelet_high = Mamba(d_model=(configs.d_model + 7) // 2, d_state=configs.d_state, d_conv=configs.d_conv, expand=configs.expand)
-        self.wavelet_low = Mamba(d_model=(configs.d_model + 7) // 2, d_state=configs.d_state, d_conv=configs.d_conv, expand=configs.expand)
+        self.wavelet_high = Mamba(d_model=d_model_wave, d_state=configs.d_state, d_conv=configs.d_conv, expand=configs.expand)
+        self.wavelet_low = Mamba(d_model=d_model_wave, d_state=configs.d_state, d_conv=configs.d_conv, expand=configs.expand)
         
         # Temporal domain
         self.time_forward = Mamba(d_model=configs.d_model, d_state=configs.d_state, d_conv=configs.d_conv, expand=configs.expand)
@@ -191,6 +195,7 @@ class Model(nn.Module):
         
         # residual shortcut
         self.trend_shortcut = nn.Linear(configs.seq_len, configs.pred_len)
+
 
     def forecast(self, x, x_mark, x_mark_h=None):
         # norm

@@ -20,13 +20,13 @@ python -u run.py \
   --enc_in 26 \
   --des 'TADNet' \
   --d_model 160 \
-  --batch_size 32 \
+  --batch_size 64 \
   --n_heads 4 \
   --dropout 0.2 \
   --train_epochs 10 \
   --loss_type quantileLoss \
   --quantiles "[0.1, 0.5, 0.9]" \
-  --step 1 \
+  --step 2 \
   --itr 1
 
 done
