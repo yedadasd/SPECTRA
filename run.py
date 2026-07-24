@@ -80,6 +80,12 @@ if __name__ == '__main__':
     parser.add_argument('--patch_len', type=int, default=16, help='patch length')
     parser.add_argument('--stride', type=int, default=8, help='stride for patching')
     parser.add_argument('--cutoff_freq', type=float, default=0.25, help='cutoff frequency for patching')
+
+    # ablation
+    parser.add_argument('--ablation', type=str, default='none',
+                        help='Ablation variant for SPECTRA_I_ablation model. Options: none, A1(w/o MTPD), A2(w/o ECS), '
+                             'A3(w/o Wavelet), A4(w/o Temporal), A5(Deterministic), A6(w/o TrendShort), '
+                             'A7(Single Dir), A8(w/o RMSNorm), A9(w/o HighFreq), A10(FFT Spectral)')
     
     # lossf
     parser.add_argument('--loss_type', type=str, default='quantileLoss', help='loss function 4 probabilistic forecasting')

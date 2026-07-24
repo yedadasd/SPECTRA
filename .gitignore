@@ -12,3 +12,9 @@ checkpoints/
 venv/
 dataset/
 .env
+.gitignore
+figures/
+scripts/ablation/
+scripts/scalability/
+scripts/plot_spectra_forecast_visualization.py
+models/SPECTRA_I_ablation.py
