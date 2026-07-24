@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+  <title id="title">SPECTRA</title>
+  <desc id="desc">State-space exogenous context and temporal-frequency resolution architecture for probabilistic energy forecasting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="0.55" stop-color="#10254a"/>
+      <stop offset="1" stop-color="#301c5e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4dd9ff"/>
+      <stop offset="0.52" stop-color="#7c8cff"/>
+      <stop offset="1" stop-color="#c06cff"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4dd9ff" stop-opacity=".08"/>
+      <stop offset=".6" stop-color="#7c8cff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c06cff" stop-opacity=".35"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="520" rx="30" fill="url(#bg)"/>
+  <circle cx="1295" cy="55" r="170" fill="#845cff" opacity=".09"/>
+  <circle cx="1125" cy="465" r="250" fill="#32c9ff" opacity=".06"/>
+  <g opacity=".11" stroke="#b8c7ff">
+    <path d="M0 90H1400M0 180H1400M0 270H1400M0 360H1400M0 450H1400"/>
+    <path d="M110 0V520M220 0V520M330 0V520M440 0V520M550 0V520M660 0V520M770 0V520M880 0V520M990 0V520M1100 0V520M1210 0V520M1320 0V520"/>
+  </g>
+
+  <g transform="translate(72 72)">
+    <rect width="116" height="34" rx="17" fill="#4dd9ff" opacity=".14" stroke="#4dd9ff" stroke-opacity=".55"/>
+    <text x="58" y="23" text-anchor="middle" fill="#b9f3ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5">PAPER + CODE</text>
+
+    <text x="0" y="124" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="84" font-weight="800" letter-spacing="5">SPECTRA</text>
+    <rect x="4" y="144" width="485" height="7" rx="3.5" fill="url(#accent)" filter="url(#glow)"/>
+    <text x="0" y="195" fill="#d7e3ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="600">Probabilistic energy forecasting, resolved.</text>
+    <text x="0" y="234" fill="#9fb0d2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">Separate the predictable backbone. Preserve uncertainty.</text>
+    <text x="0" y="264" fill="#9fb0d2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">Align exogenous context. Forecast ordered quantile boundaries.</text>
+
+    <g transform="translate(0 306)" font-family="Inter,Segoe UI,Arial,sans-serif">
+      <g>
+        <rect width="130" height="62" rx="15" fill="#102c49" stroke="#4dd9ff" stroke-opacity=".75"/>
+        <text x="65" y="27" text-anchor="middle" fill="#78e4ff" font-size="16" font-weight="800">MTPD</text>
+        <text x="65" y="48" text-anchor="middle" fill="#b5c5e3" font-size="12">DECOMPOSE</text>
+      </g>
+      <path d="M142 31H168" stroke="#7488b3" stroke-width="2"/>
+      <path d="m163 25 8 6-8 6" fill="none" stroke="#7488b3" stroke-width="2"/>
+      <g transform="translate(180)">
+        <rect width="130" height="62" rx="15" fill="#172a54" stroke="#7c8cff" stroke-opacity=".8"/>
+        <text x="65" y="27" text-anchor="middle" fill="#a9b3ff" font-size="16" font-weight="800">ECS</text>
+        <text x="65" y="48" text-anchor="middle" fill="#b5c5e3" font-size="12">ALIGN</text>
+      </g>
+      <path d="M322 31H348" stroke="#7488b3" stroke-width="2"/>
+      <path d="m343 25 8 6-8 6" fill="none" stroke="#7488b3" stroke-width="2"/>
+      <g transform="translate(360)">
+        <rect width="130" height="62" rx="15" fill="#242452" stroke="#a377ff" stroke-opacity=".8"/>
+        <text x="65" y="27" text-anchor="middle" fill="#c8a8ff" font-size="16" font-weight="800">STSSE</text>
+        <text x="65" y="48" text-anchor="middle" fill="#b5c5e3" font-size="12">MODEL</text>
+      </g>
+      <path d="M502 31H528" stroke="#7488b3" stroke-width="2"/>
+      <path d="m523 25 8 6-8 6" fill="none" stroke="#7488b3" stroke-width="2"/>
+      <g transform="translate(540)">
+        <rect width="130" height="62" rx="15" fill="#31214f" stroke="#c06cff" stroke-opacity=".8"/>
+        <text x="65" y="27" text-anchor="middle" fill="#e1adff" font-size="16" font-weight="800">SBE</text>
+        <text x="65" y="48" text-anchor="middle" fill="#b5c5e3" font-size="12">QUANTIFY</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(805 52)">
+    <path d="M0 218 C55 185 82 254 132 218 S221 139 267 215 S355 297 407 204 S495 128 548 202"
+          fill="none" stroke="#ffffff" stroke-opacity=".23" stroke-width="3"/>
+    <path d="M0 194 C55 157 83 232 132 190 S221 102 267 190 S355 267 407 175 S495 95 548 171
+             L548 250 C493 193 455 283 407 263 S321 350 267 252 S183 203 132 271 S49 234 0 270Z"
+          fill="url(#band)"/>
+    <path d="M0 232 C55 203 82 269 132 229 S221 155 267 228 S355 303 407 216 S495 145 548 214"
+          fill="none" stroke="#4dd9ff" stroke-width="5" filter="url(#glow)"/>
+    <path d="M0 253 C55 226 82 284 132 247 S221 173 267 246 S355 319 407 235 S495 162 548 233"
+          fill="none" stroke="#c06cff" stroke-width="3" stroke-dasharray="9 9" opacity=".9"/>
+
+    <g transform="translate(20 320)" font-family="Inter,Segoe UI,Arial,sans-serif">
+      <rect width="505" height="92" rx="22" fill="#09172c" fill-opacity=".72" stroke="#8ca1ca" stroke-opacity=".26"/>
+      <text x="28" y="35" fill="#8ea2c9" font-size="14" font-weight="700" letter-spacing="1.2">ONE FRAMEWORK · FOUR ENERGY DOMAINS</text>
+      <text x="28" y="70" fill="#ffffff" font-size="22" font-weight="700">Load  ·  Price  ·  Solar  ·  Wind</text>
+    </g>
+  </g>
+</svg>
