@@ -8,6 +8,7 @@
 ### for Probabilistic Energy Forecasting
 
 [![Paper](https://img.shields.io/badge/Paper-PDF-f43f5e?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](paper/SPECTRA_Paper.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2607.20587-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2607.20587)
 [![PyTorch](https://img.shields.io/badge/PyTorch-Research_Code-ee4c2c?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Forecasting](https://img.shields.io/badge/Task-Probabilistic_Forecasting-6d5dfc?style=for-the-badge)](#-the-core-idea)
 [![Energy](https://img.shields.io/badge/Domains-Load_%7C_Price_%7C_Solar_%7C_Wind-09a6a6?style=for-the-badge)](#-benchmark-coverage)
@@ -16,7 +17,7 @@
 
 SPECTRA separates predictable trend-periodic structure from uncertainty-bearing residual fluctuations, aligns both streams with exogenous context, and produces ordered quantile forecasts with a linear-complexity state-space backbone.
 
-[[Paper](paper/SPECTRA_Paper.pdf)] · [[Architecture](#-architecture)] · [[Results](#-results-at-a-glance)] · [[Quick Start](#-quick-start)] · [[Citation](#-citation)]
+[[arXiv](https://arxiv.org/abs/2607.20587)] · [[PDF](paper/SPECTRA_Paper.pdf)] · [[Architecture](#-architecture)] · [[Results](#-results-at-a-glance)] · [[Quick Start](#-quick-start)] · [[Citation](#-citation)]
 
 </div>
 
